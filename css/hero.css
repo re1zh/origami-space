@@ -1,0 +1,108 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 60px) 40px 80px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-dim);
+  padding: 6px 18px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5.5vw, 68px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 860px;
+  animation: fadeUp 0.8s 0.12s ease both;
+}
+.hero-title .accent { color: var(--gold); }
+
+.hero-subtitle {
+  margin-top: 24px;
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.7;
+  animation: fadeUp 0.8s 0.24s ease both;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: fadeUp 0.8s 0.36s ease both;
+}
+
+.hero-meta-item {
+  padding: 20px 32px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.hero-meta-item:last-child { border-right: none; }
+
+.hero-meta-item .meta-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.hero-meta-item .meta-value {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero-scroll-hint {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s 0.5s ease both, bob 2.5s 1.2s ease-in-out infinite;
+}
+.hero-scroll-hint svg { opacity: 0.4; }
+
+.hero-cta {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s 0.42s ease both;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: calc(var(--nav-h) + 40px) 20px 60px; }
+  .hero-meta { flex-direction: column; }
+  .hero-meta-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .hero-meta-item:last-child { border-bottom: none; }
+}

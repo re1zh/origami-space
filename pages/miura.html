@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Схема Миура-ори — Оригами в Космосе</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="nav-root"></div>
+
+<main style="padding-top: var(--nav-h);">
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Основа всего</div>
+        <h1 class="section-title">Схема Миура-ори</h1>
+        <p class="section-desc">
+          Самая известная инженерная находка оригами. Японский астрофизик Корё Миура разработал её в 1970 году
+          и изменил подход к проектированию складных космических конструкций.
+        </p>
+      </div>
+
+      <div class="miura-layout">
+        <div class="miura-text reveal">
+          <p>
+            Особенность схемы — в <strong style="color:var(--text)">синхронном движении</strong>.
+            Лист складывается и раскладывается одним движением, без промежуточных фиксаций.
+            Складки рассматриваются как петли, соединяющие две плоские твёрдые поверхности —
+            отсюда название «жёсткое оригами».
+          </p>
+          <p>
+            Это делает конструкцию идеальной для механизмов с минимальным числом двигателей:
+            один привод разворачивает всю батарею целиком, не требуя управления каждой секцией по отдельности.
+          </p>
+          <p>
+            В 1995 году схема была впервые применена в реальной миссии — для развёртывания солнечных батарей
+            японского спутника Space Flight Unit. Впоследствии принцип Миура-ори был использован
+            при проектировании солнцезащитного экрана телескопа James Webb.
+          </p>
+
+          <div class="highlight-box" style="margin-top:24px; margin-bottom:24px;">
+            <strong>Ключевое свойство:</strong><br>
+            Лист Миура-ори из трёх склеенных ватманов выдерживает
+            2–3 кг равномерной нагрузки — сопоставимо с тонкой фанерой, но при этом складывается
+            в компактную пачку буквально за секунду.
+          </div>
+
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:24px;">История применений</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div>
+                <div class="timeline-year">1970</div>
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-body">
+                <h4>Разработка схемы</h4>
+                <p>Японский астрофизик Корё Миура предложил схему складывания на основе принципов жёсткого оригами. Основная идея — сложить плоский лист в структуру, которая раскладывается одним движением.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <div class="timeline-year">1995</div>
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-body">
+                <h4>Space Flight Unit</h4>
+                <p>Первое практическое применение в космосе. Японский спутник SFU использовал Миура-ори для раскладывания солнечных батарей. Метод профессора Миура значительно сократил число приводных механизмов.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <div class="timeline-year">2013</div>
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-body">
+                <h4>Обсерватория «Гайя»</h4>
+                <p>19 декабря 2013 года ракета «Союз-СТ-Б» стартовала с космодрома Куру, неся обсерваторию «Гайя» для картографирования звёзд Млечного пути. Складные конструкции спутника — наследники Миура-ори.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <div class="timeline-year">2021</div>
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-body">
+                <h4>Телескоп James Webb</h4>
+                <p>Крупнейший космический телескоп применяет оригами-принципы для развёртывания главного зеркала диаметром 6,5 м и пятислойного солнцезащитного экрана — 344 разворота за 29 дней.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="miura-sticky reveal reveal-delay-2">
+          <div class="diagram-card">
+            <canvas id="miura-top-view" style="width:100%; display:block; border-radius:6px;"></canvas>
+
+            <div style="display:flex; gap:32px; justify-content:center; align-items:center; margin-top:14px;">
+              <div style="display:inline-flex; align-items:center; gap:8px; font-size:11px; color:var(--text);">
+                <span style="display:inline-block; width:24px; height:2px; background:#f5c842; flex-shrink:0;"></span>
+                Гора (складка вверх)
+              </div>
+              <div style="display:inline-flex; align-items:center; gap:8px; font-size:11px; color:var(--text);">
+                <span style="display:inline-block; width:24px; height:2px; background: repeating-linear-gradient(90deg, #4a9eff 0px, #4a9eff 5px, transparent 5px, transparent 8px); flex-shrink:0;"></span>
+                Долина (складка вниз)
+              </div>
+            </div>
+            <p class="diagram-caption" style="margin-top:8px;">Паттерн Миура-ори — вид сверху</p>
+          </div>
+
+          <div class="diagram-card">
+            <svg viewBox="0 0 380 180" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a2a40"/><stop offset="1" stop-color="#0d1a2e"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#0d2530"/><stop offset="1" stop-color="#091820"/>
+                </linearGradient>
+              </defs>
+              <polygon points="16,110 76,72 76,152 16,190"  fill="url(#g1)" stroke="#f5c842" stroke-width="0.9"/>
+              <polygon points="76,72 136,110 136,190 76,152" fill="url(#g2)" stroke="#f5c842" stroke-width="0.9"/>
+              <polygon points="136,110 196,72 196,152 136,190" fill="url(#g1)" stroke="#f5c842" stroke-width="0.9"/>
+              <polygon points="196,72 256,110 256,190 196,152" fill="url(#g2)" stroke="#f5c842" stroke-width="0.9"/>
+              <polygon points="256,110 316,72 316,152 256,190" fill="url(#g1)" stroke="#f5c842" stroke-width="0.9"/>
+              <polygon points="316,72 364,110 364,190 316,152" fill="url(#g2)" stroke="#f5c842" stroke-width="0.9"/>
+              <text x="190" y="36" fill="#7a8499" font-size="10" text-anchor="middle" font-family="Geologica">← одно движение складывает и раскладывает всё →</text>
+              <path d="M 32 46 L 348 46" stroke="#7a8499" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+              <polygon points="348,43 355,46 348,49" fill="#7a8499" opacity="0.5"/>
+              <polygon points="32,43 25,46 32,49" fill="#7a8499" opacity="0.5"/>
+            </svg>
+            <p class="diagram-caption">3D-профиль развёрнутого листа Миура-ори</p>
+          </div>
+
+          <div class="diagram-card">
+            <svg viewBox="0 0 380 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="18" height="80" rx="2" fill="#1a2a40" stroke="#f5c842" stroke-width="0.8"/>
+              <rect x="24" y="20" width="18" height="80" rx="2" fill="#0d2530" stroke="#f5c842" stroke-width="0.8"/>
+              <rect x="28" y="20" width="18" height="80" rx="2" fill="#1a2a40" stroke="#f5c842" stroke-width="0.8"/>
+              <text x="38" y="115" fill="#7a8499" font-size="9" text-anchor="middle" font-family="Geologica">Сложено</text>
+
+              <path d="M 68 60 L 110 60" stroke="#f5c842" stroke-width="1.5" marker-end="url(#arr)"/>
+              <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#f5c842"/></marker></defs>
+              <text x="89" y="54" fill="#7a8499" font-size="8" text-anchor="middle" font-family="Geologica">1 движение</text>
+
+              <polygon points="120,30 164,52 164,88 120,66" fill="#1a2a40" stroke="#f5c842" stroke-width="0.8"/>
+              <polygon points="164,52 208,30 208,66 164,88" fill="#0d2530" stroke="#f5c842" stroke-width="0.8"/>
+              <polygon points="208,30 252,52 252,88 208,66" fill="#1a2a40" stroke="#f5c842" stroke-width="0.8"/>
+              <polygon points="252,52 296,30 296,66 252,88" fill="#0d2530" stroke="#f5c842" stroke-width="0.8"/>
+              <polygon points="296,30 340,52 340,88 296,66" fill="#1a2a40" stroke="#f5c842" stroke-width="0.8"/>
+              <text x="230" y="115" fill="#7a8499" font-size="9" text-anchor="middle" font-family="Geologica">Развёрнуто</text>
+            </svg>
+            <p class="diagram-caption">Компактность складывания</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Принципы</div>
+        <h2 class="section-title">Как это работает</h2>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="card">
+          <h3 style="font-family:var(--font-display); font-size:13px; font-weight:600; margin-bottom:10px;">Складки «гора»</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.7;">Жёсткие диагональные складки, направленные вверх. Они создают несущую структуру ячейки и обеспечивают жёсткость на изгиб в поперечном направлении.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display); font-size:13px; font-weight:600; margin-bottom:10px;">Складки «долина»</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.7;">Мягкие горизонтальные складки, направленные вниз. Они позволяют конструкции складываться в пакет и являются осью «шарнира» при раскладывании.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display); font-size:13px; font-weight:600; margin-bottom:10px;">Жёсткое оригами</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.7;">Грани между складками не деформируются — изгибаются только сами линии складок. Это позволяет использовать металл, карбон и другие жёсткие материалы вместо бумаги.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+<script src="../js/components.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/reveal.js"></script>
+<script src="../js/miura-preview.js"></script>
+</body>
+</html>

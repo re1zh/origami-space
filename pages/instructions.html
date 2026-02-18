@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инструкции — Оригами в Космосе</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="nav-root"></div>
+
+<main style="padding-top: var(--nav-h);">
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Сделай сам</div>
+        <h1 class="section-title">Пошаговые инструкции</h1>
+        <p class="section-desc">
+          Три модели из исследования — подробные шаги, советы и скачиваемые шаблоны.
+          Начните с экрана Миура-ори: это основа всех остальных конструкций.
+        </p>
+      </div>
+
+      <div class="tabs reveal">
+        <button class="tab-btn active" data-tab="miura-screen">Экран Миура-ори</button>
+        <button class="tab-btn" data-tab="shield">Щит-зонт-антенна</button>
+      </div>
+
+      <!-- Экран -->
+      <div class="tab-content active" id="tab-miura-screen">
+        <div class="instruction-layout">
+          <div class="instruction-sidebar">
+            <span class="badge badge-green">★ Начальный</span>
+            <h2>Солнцезащитный экран Миура-ори</h2>
+            <div class="materials-box">
+              <h4>Материалы</h4>
+              <ul>
+                <li>3 листа ватмана А1 (200 г/м²)</li>
+                <li>ПВА или канцелярский клей</li>
+                <li>Линейка (от 50 см)</li>
+                <li>Карандаш или шариковая ручка</li>
+                <li>Большая плоская поверхность</li>
+                <li>Прищепки или зажимы</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="steps-list">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Разметка горизонтальных линий</h4>
+                <p>Положите ватман горизонтально. Проведите горизонтальные линии через каждые 40 мм — это будут складки «долина» и «гора» (чередуются). На листе А1 получится около 14 линий.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Вертикальные засечки и зигзаг</h4>
+                <p>На каждой горизонтальной линии сделайте засечки через каждые 30 мм — но со <strong>смещением на 15 мм</strong> между соседними рядами. Это даёт характерный зигзаг паттерна Миура.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Диагональные линии гора/долина</h4>
+                <p>Соедините засечки соседних рядов диагональными линиями. Нечётные горизонтальные ряды — складки «гора» (сгибать вверх), чётные — «долина» (сгибать вниз).</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Предварительная прогибка линий</h4>
+                <p>Перед складыванием слегка «прогните» каждую линию пальцем или тупой стороной ножниц вдоль разметки. Это размягчит волокна бумаги и облегчит точное складывание.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Складывание первой секции</h4>
+                <p>Начните с одного угла. Согните по первой горизонтальной «долине», затем — по первой диагональной «горе». Ячейка начнёт принимать трёхмерную форму.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">6</div>
+              <div class="step-body">
+                <h4>Повторение паттерна</h4>
+                <p>Продолжайте складывать ряд за рядом. Миура-ори складывается как гармоника — каждая следующая ячейка зеркально отражает предыдущую. Не торопитесь: точность важнее скорости.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">7</div>
+              <div class="step-body">
+                <h4>Склейка трёх листов</h4>
+                <p>Повторите шаги 1–6 для двух оставшихся листов с идентичной разметкой. Нанесите ПВА на боковую грань первого листа и плотно прижмите второй. Зафиксируйте прищепками на 30 минут. Повторите для третьего.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Щит -->
+      <div class="tab-content" id="tab-shield">
+        <div class="instruction-layout">
+          <div class="instruction-sidebar">
+            <span class="badge badge-gold">★★ Средний</span>
+            <h2>Щит-зонт-антенна</h2>
+            <div class="materials-box">
+              <h4>Материалы</h4>
+              <ul>
+                <li>5–6 листов ватмана А1</li>
+                <li>Алюминиевая фольга</li>
+                <li>Клей ПВА + клей-карандаш</li>
+                <li>Армированный скотч (широкий)</li>
+                <li>Линейка, карандаш, ножницы</li>
+                <li>Деревянные рейки (опционально)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="steps-list">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Создание 5 базовых панелей</h4>
+                <p>Изготовьте 5 панелей Миура-ори (по инструкции Экрана, шаги 1–6) из двух склеенных листов ватмана каждая. Все панели должны иметь <strong>идентичную разметку</strong>.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Оклейка внутренней стороны фольгой</h4>
+                <p>На внутреннюю (вогнутую) сторону каждой панели приклейте алюминиевую фольгу <strong>блестящей стороной внутрь</strong>. Фольга выполняет роль отражающей поверхности для режима антенны.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Сборка панелей в единый щит</h4>
+                <p>Разложите панели в линию «гармошкой». Боковые грани соседних панелей соединяйте армированным скотчем с обеих сторон — это создаёт гибкие петли-шарниры. Не клейте ПВА: нужна подвижность.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Проверка складывания</h4>
+                <p>Проверьте, что весь щит складывается и раскладывается как единый пакет за 2–3 секунды. Если «клинит» — проверьте выравнивание складок на стыке, они должны совпадать.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Усиление краёв (опционально)</h4>
+                <p>Для повышения жёсткости вдоль боковых рёбер приклейте деревянные рейки или пластиковые трубки. Это особенно важно при использовании щита как ветрозащиты.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">6</div>
+              <div class="step-body">
+                <h4>Тестирование в режиме антенны</h4>
+                <p>Разложите щит и придайте ему слегка вогнутую параболическую форму. Направьте фольговую сторону на источник сигнала. Сравните уровень Wi-Fi на смартфоне до и после.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+<script src="../js/components.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/reveal.js"></script>
+</body>
+</html>

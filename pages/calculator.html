@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор Миура-ори — Оригами в Космосе</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="nav-root"></div>
+
+<main style="padding-top: var(--nav-h);">
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Инструмент</div>
+        <h1 class="section-title">Калькулятор Миура-ори</h1>
+        <p class="section-desc">
+          Введите размеры листа, шаг складок и угол — получите точные параметры разметки,
+          смещение зигзага, степень компактности и превью сетки.
+        </p>
+      </div>
+
+      <div class="calc-wrap reveal">
+        <div class="calc-inputs">
+          <h3>Параметры листа</h3>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Ширина листа (мм)</label>
+              <input type="number" id="c-width" value="297" min="50" max="3000">
+            </div>
+            <div class="field">
+              <label>Высота листа (мм)</label>
+              <input type="number" id="c-height" value="420" min="50" max="3000">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Шаг складки по X (мм)</label>
+              <input type="number" id="c-step-x" value="27" min="5" max="300">
+              <div class="hint">Расстояние между вертикальными гребнями</div>
+            </div>
+            <div class="field">
+              <label>Шаг складки по Y (мм)</label>
+              <input type="number" id="c-step-y" value="35" min="5" max="300">
+              <div class="hint">Расстояние между горизонтальными складками</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Угол наклона складок (°)</label>
+            <input type="number" id="c-angle" value="60" min="20" max="85">
+            <div class="hint">Оптимально 45–70°. Больший угол → компактнее сложение, меньше жёсткость</div>
+          </div>
+
+          <div class="field">
+            <label>Материал</label>
+            <select id="c-material">
+              <option value="1">Обычная бумага (80 г/м²)</option>
+              <option value="2" selected>Ватман (200 г/м²)</option>
+              <option value="3">Картон (300 г/м²)</option>
+              <option value="4">Фольга алюминиевая (50 г/м²)</option>
+            </select>
+          </div>
+
+          <button class="calc-btn" id="calc-submit">
+            Рассчитать параметры
+          </button>
+        </div>
+
+        <div class="calc-output" id="calc-output-panel">
+          <div class="calc-placeholder" id="calc-placeholder">
+            <div class="placeholder-icon">📐</div>
+            <p>Заполните параметры и нажмите «Рассчитать»</p>
+          </div>
+          <div id="calc-result-area" style="display:none;">
+            <h3>Результаты расчёта</h3>
+            <div class="result-grid" id="result-grid"></div>
+            <div class="grid-preview">
+              <canvas id="grid-canvas"></canvas>
+              <div class="grid-preview-label">Превью сетки складок (до 20×12 ячеек)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:48px;">
+        <h2 style="font-family:var(--font-display); font-size:18px; font-weight:700; margin-bottom:24px;">Справочные форматы</h2>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border);">
+                <th style="text-align:left; padding:12px 16px; color:var(--gold); font-family:var(--font-display); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;">Формат</th>
+                <th style="text-align:center; padding:12px 16px; color:var(--muted); font-family:var(--font-display); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;">Ширина</th>
+                <th style="text-align:center; padding:12px 16px; color:var(--muted); font-family:var(--font-display); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;">Высота</th>
+                <th style="text-align:center; padding:12px 16px; color:var(--muted); font-family:var(--font-display); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;">Рекомендуемый шаг</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border); cursor:pointer;" onclick="fillForm(210,297,21,27,60)" class="table-row">
+                <td style="padding:12px 16px; font-weight:500;">А4</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">210 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">297 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">21 × 27 мм</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border); cursor:pointer;" onclick="fillForm(297,420,27,35,60)" class="table-row">
+                <td style="padding:12px 16px; font-weight:500;">А3</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">297 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">420 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">27 × 35 мм</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border); cursor:pointer;" onclick="fillForm(420,594,30,42,60)" class="table-row">
+                <td style="padding:12px 16px; font-weight:500;">А2</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">420 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">594 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">30 × 42 мм</td>
+              </tr>
+              <tr style="cursor:pointer;" onclick="fillForm(594,841,29,33,60)" class="table-row">
+                <td style="padding:12px 16px; font-weight:500;">А1 ⭐</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">594 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">841 мм</td>
+                <td style="padding:12px 16px; text-align:center; color:var(--muted);">29 × 33 мм</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12px; color:var(--muted); margin-top:12px;">⭐ Нажмите на строку, чтобы подставить значения в калькулятор</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+<script src="../js/components.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/reveal.js"></script>
+<script src="../js/calculator.js"></script>
+<script>
+  document.querySelectorAll('.table-row').forEach(row => {
+    row.addEventListener('mouseenter', () => row.style.background = 'var(--card)');
+    row.addEventListener('mouseleave', () => row.style.background = '');
+  });
+
+  function fillForm(w, h, sx, sy, angle) {
+    document.getElementById('c-width').value  = w;
+    document.getElementById('c-height').value = h;
+    document.getElementById('c-step-x').value = sx;
+    document.getElementById('c-step-y').value = sy;
+    document.getElementById('c-angle').value  = angle;
+    document.getElementById('calc-submit').click();
+    document.querySelector('.calc-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

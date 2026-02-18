@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&family=Geologica:wght@300;400;500&display=swap');
+
+:root {
+  --black:      #050810;
+  --deep:       #080d1a;
+  --panel:      #0d1425;
+  --card:       #111929;
+  --border:     rgba(255, 255, 255, 0.07);
+  --gold:       #f5c842;
+  --gold-dim:   rgba(245, 200, 66, 0.12);
+  --gold-glow:  rgba(245, 200, 66, 0.35);
+  --blue:       #4a9eff;
+  --blue-dim:   rgba(74, 158, 255, 0.10);
+  --green:      #50c878;
+  --text:       #e8ecf5;
+  --muted:      #7a8499;
+  --radius:     12px;
+  --radius-sm:  8px;
+  --font-display: 'Unbounded', sans-serif;
+  --font-body:    'Geologica', sans-serif;
+  --nav-h: 60px;
+  --section-gap: 120px;
+  --container: 1100px;
+}
+
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  font-family: var(--font-body); 
+  background: var(--black); 
+  color: var(--text); 
+  overflow-x: hidden; 
+  line-height: 1.6; 
+}
+
+img, svg { 
+  display: block; 
+  max-width: 100%; 
+}
+
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+button { 
+  font-family: var(--font-body); 
+  cursor: pointer; 
+}
+
+input, select { 
+  font-family: var(--font-body); 
+}
+
+ul { 
+  list-style: none; 
+}
+
+#stars-canvas { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none; 
+  z-index: 0; 
+}
+
+.container { 
+  max-width: var(--container); 
+  margin: 0 auto; 
+  padding: 0 40px; 
+}
+
+section { position: relative; z-index: 1; padding: var(--section-gap) 0; }
+section.dark-bg { background: var(--deep); }
+
+.section-label { font-family: var(--font-display); font-size: 10px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 38px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.section-desc { margin-top: 16px; font-size: 15px; color: var(--muted); max-width: 580px; line-height: 1.75; }
+.section-header { margin-bottom: 56px; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s; }
+.card:hover::before { opacity: 1; }
+.card:hover { border-color: rgba(245, 200, 66, 0.2); }
+
+.badge { display: inline-block; font-family: var(--font-display); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 14px; border-radius: 999px; margin-bottom: 16px; }
+.badge-gold  { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245,200,66,0.28); }
+.badge-blue  { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(74,158,255,0.25); }
+.badge-green { background: rgba(80,200,120,0.1); color: var(--green); border: 1px solid rgba(80,200,120,0.28); }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius-sm); border: none; transition: all 0.2s; }
+.btn-primary { background: var(--gold); color: var(--black); }
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:active { transform: scale(0.97); }
+.btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+
+@media (max-width: 768px) {
+  :root { --section-gap: 80px; }
+  .container { padding: 0 20px; }
+}

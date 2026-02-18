@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Исследование — Оригами в Космосе</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="nav-root"></div>
+
+<main style="padding-top: var(--nav-h);">
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Исследование</div>
+        <h1 class="section-title">Зачем оригами в космосе?</h1>
+        <p class="section-desc">
+          Современные спутники становятся всё больше, а размеры обтекателя ракеты-носителя остаются прежними.
+          Оригами предлагает элегантное инженерное решение этой задачи.
+        </p>
+      </div>
+
+      <div class="card fact-card reveal" style="margin-bottom:24px;">
+        <h3 style="font-family:var(--font-display); font-size:15px; font-weight:600; margin-bottom:12px;">Проблема</h3>
+        <p style="font-size:14px; color:var(--muted); line-height:1.8; max-width:800px;">
+          Спутники, солнечные панели, антенны и телескопы становятся всё крупнее, но диаметр обтекателя ракеты-носителя
+          остаётся неизменным. Нужно было придумать, как разместить большую конструкцию в маленьком пространстве
+          и развернуть её уже на орбите без лишних механических приводов.
+        </p>
+      </div>
+
+      <div class="grid-2 reveal">
+        <div class="card icon-card">
+          <div class="card-icon">☀️</div>
+          <h3>Солнечные батареи</h3>
+          <p>Японский спутник Space Flight Unit (1995) стал первым, где применили схему Миура-ори для раскладывания фотоэлементов. Это сократило число приводных механизмов и упростило конструкцию.</p>
+        </div>
+        <div class="card icon-card" style="background: linear-gradient(135deg, #0d1a2e, #0d2518); border-color: rgba(74,158,255,0.18);">
+          <div class="card-icon">🔭</div>
+          <h3>Космические телескопы</h3>
+          <p>Телескоп James Webb использует принципы оригами для развёртывания зеркала диаметром 6,5 м и многослойного солнцезащитного экрана — это 29-дневная последовательность из 344 разворотов.</p>
+        </div>
+        <div class="card icon-card" style="background: linear-gradient(135deg, #0d1a2e, #0d2518); border-color: rgba(74,158,255,0.18);">
+          <div class="card-icon">🤖</div>
+          <h3>Робототехника</h3>
+          <p>Робот Mori3 — модульный трансформер, использующий полигональные оригами-модули. Он меняет форму, перемещается и может ремонтировать объекты в условиях космоса.</p>
+        </div>
+        <div class="card icon-card">
+          <div class="card-icon">🏗️</div>
+          <h3>Архитектура</h3>
+          <p>Преподаватель Токийского университета Тати Томохиро применяет оригами-принципы в архитектуре. Парк Pavilion спроектирован по технике модульного оригами — это складывающееся здание.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Методология</div>
+        <h2 class="section-title">Цели и задачи</h2>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--gold);">Цель работы</h3>
+          <p style="font-size:14px; color:var(--muted); line-height:1.8;">
+            Исследовать принципы оригами-инженерии и доказать их эффективность для создания компактных
+            и трансформируемых конструкций на примере самостоятельно разработанных моделей
+            для использования в космических технологиях.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:16px; color:var(--gold);">Гипотеза</h3>
+          <p style="font-size:14px; color:var(--muted); line-height:1.8;">
+            Принципы оригами с его подходом к складыванию плоского листа в компактные объёмные структуры
+            могут предложить эффективные инженерные решения для космических технологий.
+          </p>
+        </div>
+      </div>
+
+      <div class="card reveal" style="margin-top:24px;">
+        <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:20px;">Задачи исследования</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;">
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:28px; height:28px; background:var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--gold); flex-shrink:0;">1</div>
+            <p style="font-size:13px; color:var(--muted); line-height:1.7;">Изучить базовые принципы оригами-инженерии</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:28px; height:28px; background:var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--gold); flex-shrink:0;">2</div>
+            <p style="font-size:13px; color:var(--muted); line-height:1.7;">Исследовать современные применения в науке и технике</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:28px; height:28px; background:var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--gold); flex-shrink:0;">3</div>
+            <p style="font-size:13px; color:var(--muted); line-height:1.7;">Систематизировать ключевые паттерны: складки долина/гора, Миура-ори</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:28px; height:28px; background:var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--gold); flex-shrink:0;">4</div>
+            <p style="font-size:13px; color:var(--muted); line-height:1.7;">Провести эксперимент — создать модели и протестировать их</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:28px; height:28px; background:var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--gold); flex-shrink:0;">5</div>
+            <p style="font-size:13px; color:var(--muted); line-height:1.7;">Сделать выводы о перспективах данного направления</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Результаты</div>
+        <h2 class="section-title">Проведённые эксперименты</h2>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="card exp-card">
+          <div class="exp-card-top">
+            <div class="exp-icon">💨</div>
+            <h3>Тест на ветровую нагрузку</h3>
+            <p>Экран Миура-ори поставили вертикально и направили поток воздуха от вентилятора на середину конструкции.</p>
+          </div>
+          <div class="exp-result">Результат: <strong>конструкция лишь слегка прогибается</strong>, но не опрокидывается. В растянутом состоянии складки работают как рёбра жёсткости.</div>
+        </div>
+        <div class="card exp-card">
+          <div class="exp-card-top">
+            <div class="exp-icon">⚖️</div>
+            <h3>Тест на несущую нагрузку</h3>
+            <p>Разложенный экран положили горизонтально на две опоры и постепенно нагружали равномерно распределённым грузом.</p>
+          </div>
+          <div class="exp-result">Результат: выдержал <strong>2–3 кг</strong> без потери формы. Плоский лист из тех же ватманов держит лишь 100–200 г.</div>
+        </div>
+        <div class="card exp-card">
+          <div class="exp-card-top">
+            <div class="exp-icon">📡</div>
+            <h3>Тест антенного усиления</h3>
+            <p>Отражатель установили за антенной роутера и измерили уровень Wi-Fi сигнала в разных масштабах.</p>
+          </div>
+          <div class="exp-result">Результат: 100% масштаб даёт заметное усиление. Версия 75% показала <strong>примерно на 20% слабее</strong> — прямая зависимость от размера подтверждена.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Выводы</div>
+        <h2 class="section-title">Заключение</h2>
+      </div>
+      <div class="grid-2 reveal">
+        <div class="card" style="position:relative; overflow:hidden;">
+          <div class="conclusion-num">
+            1
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:12px;">Компактность и надёжность</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.75;">
+            Принципы оригами позволяют упаковать большой объект в компактный контейнер без потери функциональности после развёртывания.
+          </p>
+        </div>
+        <div class="card" style="position:relative; overflow:hidden;">
+          <div class="conclusion-num">
+            2
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:12px;">Прочность через геометрию</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.75;">
+            Структуры Миура-ори увеличивают жёсткость в разы по сравнению с плоским листом того же материала и веса — без добавления массы.
+          </p>
+        </div>
+        <div class="card" style="position:relative; overflow:hidden;">
+          <div class="conclusion-num">
+            3
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:12px;">Универсальность применения</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.75;">
+            От солнечных батарей спутников до антенных отражателей и временных укрытий — одна геометрическая идея решает разные инженерные задачи.
+          </p>
+        </div>
+        <div class="card" style="position:relative; overflow:hidden;">
+          <div class="conclusion-num">
+            4
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:12px;">Будущее за оригами</h3>
+          <p style="font-size:13px; color:var(--muted); line-height:1.75;">
+            Замена бумаги на композиты и лёгкие полимеры открывает путь к складываемым зеркалам телескопов нового поколения и трансформируемым конструкциям МКС.
+          </p>
+        </div>
+        <div class="quote-block col-span-2">
+          <blockquote>«За оригами-инженерией в космосе — будущее»</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/reveal.js"></script>
+</body>
+</html>
